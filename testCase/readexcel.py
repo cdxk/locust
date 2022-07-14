@@ -1,3 +1,4 @@
+"读取excel中的数据封装到数据组中"
 from openpyxl import load_workbook
 import sys,os
 
@@ -16,7 +17,7 @@ class readexcel():
     for a_row in row_data:
         #获取行数据
         row_data=[cell.value for cell in a_row]
-        #将表头和行数据组装成字段
+        #将表头和行数据组装成字典
         row_dict=dict(zip(titles,row_data))
         #将每行数据字段加到列表中
         all_row_dict.append(row_dict)
