@@ -27,7 +27,7 @@ class SendEmail():
         att=MIMEText(open(file_path,'rb').read(),'base64','utf-8')
         att["Content-Type"] = 'application/octet-stream'
         # 这里的filename可以任意写，写什么名字，邮件中附件显示什么名字
-        att["Content-Disposition"] = 'attachment; filename="data.xlsx"'
+        att["Content-Disposition"] = 'attachment; filename="report.html"'
         message.attach(att)
         try:
             # 连接smtp服务器，明文/SSL/TLS三种方式，根据你使用的SMTP支持情况选择一种
@@ -57,4 +57,4 @@ class SendEmail():
             print(e)
 
 if __name__=='__main__':
-    SendEmail().send_attach('data.xlsx')
+    SendEmail().send_attach('report.html')
