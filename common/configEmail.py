@@ -10,9 +10,9 @@ sys.path.append(base_dir)
 
 class SendEmail():
     def send_attach(self,file_name):
-        msg_from='emilee@lwork.com'
-        pwd='olzhkfnrrcwibbee'
-        to='928566418@qq.com'
+        msg_from='928566418@qq.com'
+        pwd='gmdkgzvrulqpbfia'
+        to='349255950@qq.com'
         message=MIMEMultipart()
         #发件人名字
         message['From']=Header('系统测试','utf-8')
