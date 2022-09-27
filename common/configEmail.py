@@ -5,9 +5,8 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
-base_dir=os.path.dirname(os.path.abspath(__file__))[:-11]
+base_dir=os.path.dirname(os.path.abspath(__file__))[:-7]
 sys.path.append(base_dir)
-
 class SendEmail():
     def send_attach(self,file_name):
         msg_from='928566418@qq.com'
@@ -20,7 +19,7 @@ class SendEmail():
         message['To']=Header('emilee','utf-8')
         #邮件标题
         subject='Python 自动化测试报告'
-        file_path=os.path.join(base_dir+'data/'+file_name)
+        file_path=os.path.join(base_dir+file_name)
         message['Subject']=Header(subject,'utf-8')
         #邮件内容
         message.attach(MIMEText('这是自动化测试脚本邮件。。','plain','utf-8'))
@@ -32,7 +31,7 @@ class SendEmail():
         try:
             # 连接smtp服务器，明文/SSL/TLS三种方式，根据你使用的SMTP支持情况选择一种
             # 纯粹的ssl加密方式，通信过程加密，邮件数据安全
-            smtp = smtplib.SMTP_SSL('imap.gmail.com',465)
+            smtp = smtplib.SMTP_SSL('smtp.qq.com',465)
             smtp.ehlo()
             smtp.login(msg_from, pwd)
             smtp.sendmail(msg_from, to, message.as_string())
@@ -57,4 +56,4 @@ class SendEmail():
             print(e)
 
 if __name__=='__main__':
-    SendEmail().send_attach('report.html')
+    SendEmail().send_attach('/testCase/report/report.html')

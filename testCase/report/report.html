@@ -119,7 +119,7 @@ table.stats tr.total td {
 
         <div class="info">
             
-            <p>During: <span class="l10n datetime">2022-09-27 02:43:49</span> - <span class="l10n datetime">2022-09-27 02:44:18</span></p>
+            <p>During: <span class="l10n datetime">2022-09-27 03:09:03</span> - <span class="l10n datetime">2022-09-27 03:09:11</span></p>
             <p>Target Host: <span>https://crmtest.gaker.com</span></p>
             <p>Script: <span>locustTest.py</span></p>
         </div>
@@ -146,39 +146,39 @@ table.stats tr.total td {
                         <tr>
                             <td>POST</td>
                             <td>/api/v1/tenant/data/getDataDetail?queryType=LEVEL_ALL&objectApiName=businessObject&dataId=6274d3c6d82a14336cf764f2</td>
-                            <td>14</td>
+                            <td>6</td>
                             <td>0</td>
-                            <td>134</td>
-                            <td>86</td>
-                            <td>370</td>
+                            <td>157</td>
+                            <td>94</td>
+                            <td>283</td>
                             <td>139</td>
-                            <td>0.5</td>
+                            <td>0.7</td>
                             <td>0.0</td>
                         </tr>
                     
                         <tr>
                             <td>POST</td>
                             <td>/api/v1/tenant/data/getDataList/custom/page?queryType=LEVEL_ALL&objectApiName=customerObject</td>
-                            <td>7</td>
+                            <td>1</td>
                             <td>0</td>
-                            <td>94</td>
-                            <td>85</td>
-                            <td>100</td>
+                            <td>99</td>
+                            <td>99</td>
+                            <td>99</td>
                             <td>139</td>
-                            <td>0.2</td>
+                            <td>0.1</td>
                             <td>0.0</td>
                         </tr>
                     
                         <tr class="total">
                             <td></td>
                             <td>Aggregated</td>
-                            <td>21</td>
+                            <td>7</td>
                             <td>0</td>
-                            <td>121</td>
-                            <td>85</td>
-                            <td>370</td>
+                            <td>149</td>
+                            <td>94</td>
+                            <td>283</td>
                             <td>139</td>
-                            <td>0.7</td>
+                            <td>0.8</td>
                             <td>0.0</td>
                         </tr>
                     
@@ -208,40 +208,40 @@ table.stats tr.total td {
                         <tr>
                             <td>POST</td>
                             <td>/api/v1/tenant/data/getDataDetail?queryType=LEVEL_ALL&objectApiName=businessObject&dataId=6274d3c6d82a14336cf764f2</td>
-                            <td>93</td>
-                            <td>96</td>
-                            <td>97</td>
-                            <td>120</td>
-                            <td>370</td>
-                            <td>370</td>
-                            <td>370</td>
-                            <td>370</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>270</td>
+                            <td>270</td>
+                            <td>280</td>
+                            <td>280</td>
+                            <td>280</td>
+                            <td>280</td>
                         </tr>
                     
                         <tr>
                             <td>POST</td>
                             <td>/api/v1/tenant/data/getDataList/custom/page?queryType=LEVEL_ALL&objectApiName=customerObject</td>
-                            <td>97</td>
-                            <td>97</td>
-                            <td>97</td>
                             <td>99</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
+                            <td>99</td>
+                            <td>99</td>
+                            <td>99</td>
+                            <td>99</td>
+                            <td>99</td>
+                            <td>99</td>
+                            <td>99</td>
                         </tr>
                     
                         <tr class="total">
                             <td></td>
                             <td>Aggregated</td>
-                            <td>95</td>
-                            <td>97</td>
-                            <td>97</td>
+                            <td>99</td>
                             <td>100</td>
-                            <td>120</td>
-                            <td>370</td>
-                            <td>370</td>
-                            <td>370</td>
+                            <td>100</td>
+                            <td>270</td>
+                            <td>280</td>
+                            <td>280</td>
+                            <td>280</td>
+                            <td>280</td>
                         </tr>
                     
                 </tbody>
@@ -532,12 +532,12 @@ function fillTasksFromRequest() {
     <script>
         
 var stats_history = {
-    "time": ["02:43:54", "02:43:59", "02:44:04", "02:44:09", "02:44:14"].map(server_time => new Date(new Date().setUTCHours(...(server_time.split(":")))).toLocaleTimeString()),
-    "user_count": [{"value": 2}, {"value": 2}, {"value": 2}, {"value": 2}, {"value": 2}],
-    "current_rps": [{"users": 2, "value": 0.6666666666666666}, {"users": 2, "value": 0.8}, {"users": 2, "value": 0.8}, {"users": 2, "value": 0.6}, {"users": 2, "value": 0.6}],
-    "current_fail_per_sec": [{"users": 2, "value": 0}, {"users": 2, "value": 0}, {"users": 2, "value": 0}, {"users": 2, "value": 0}, {"users": 2, "value": 0}],
-    "response_time_percentile_50": [{"users": 2, "value": 97}, {"users": 2, "value": 97}, {"users": 2, "value": 99}, {"users": 2, "value": 97}, {"users": 2, "value": 91}],
-    "response_time_percentile_95": [{"users": 2, "value": 370.0}, {"users": 2, "value": 370.0}, {"users": 2, "value": 110.0}, {"users": 2, "value": 110.0}, {"users": 2, "value": 99}],
+    "time": ["03:09:08"].map(server_time => new Date(new Date().setUTCHours(...(server_time.split(":")))).toLocaleTimeString()),
+    "user_count": [{"value": 2}],
+    "current_rps": [{"users": 2, "value": 1.0}],
+    "current_fail_per_sec": [{"users": 2, "value": 0}],
+    "response_time_percentile_50": [{"users": 2, "value": 96}],
+    "response_time_percentile_95": [{"users": 2, "value": 99}],
     "markers": [],
 };
         var rpsChart = new LocustLineChart($(".charts-container"), "Total Requests per Second", ["RPS", "Failures/s"], "reqs/s", ['#00ca5a', '#ff6d6d']);

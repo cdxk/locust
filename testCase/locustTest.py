@@ -3,9 +3,11 @@
 from locust import HttpUser,TaskSet,task,between
 import os,sys
 from readexcel import readexcel
+
 #将引入内部文件所在目录加进sys.path中
 base_dir=os.path.dirname(os.path.abspath(__file__))
 sys.path.append(base_dir)
+from common.configEmail import SendEmail
 #v1.0以上版本没有httplocust(The HttpLocust class has been renamed to HttpUser in version 1.0)
 # 定义用户行为，继承TaskSet类，用于描述用户行为
 # (这个类下面放各种请求，请求是基于requests的，每个方法请求和requests差不多，请求参数、方法、响应对象和requests一样的使用，url这里写的是路径)
@@ -20,7 +22,6 @@ class Hellotasks(TaskSet):
         # 将字符串强制转化为字典
         header = eval(self.all_row_dicts[0].get('header'))
         name = self.all_row_dicts[0].get('name')
-        # print(header)
         url = self.all_row_dicts[0].get('url')
         r = self.client.post(url, timeout=60, headers=header)
         assert r.status_code == 200
@@ -44,4 +45,5 @@ if __name__=='__main__':
     # file_name=os.path.abspath(__file__)
     # print(file_name)
     # os.system(f'/Users/caidan/venv/interfaceAuto/bin/locust -f {file_name} -u 4 -r 2 -t 10s')
-    os.system(f'/Users/caidan/venv/interfaceAuto/bin/locust -f /Users/caidan/tool/cai/pycharmProject/locust/testCase/locustTest.py --headless -H https://crmtest.gaker.com --u 2 -r2 -t 30s --html /Users/caidan/tool/cai/pycharmProject/locust/testCase/report/report.html')
+    os.system(f'/Users/caidan/venv/interfaceAuto/bin/locust -f /Users/caidan/tool/cai/pycharmProject/locust/testCase/locustTest.py --headless -H https://crmtest.gaker.com --u 2 -r2 -t 10s --html /Users/caidan/tool/cai/pycharmProject/locust/testCase/report/report.html')
+    SendEmail().send_attach('/testCase/report/report.html')
