@@ -3,12 +3,16 @@
 import os,sys
 import smtplib
 from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
 base_dir=os.path.dirname(os.path.abspath(__file__))[:-7]
 sys.path.append(base_dir)
 class SendEmail():
     def send_attach(self,file_name):
+        file_path = os.path.join(base_dir + file_name)
+        # 获取文件路径中的后缀
+        houzhui = os.path.splitext(file_path)[-1]
         msg_from='928566418@qq.com'
         pwd='gmdkgzvrulqpbfia'
         to='349255950@qq.com'
@@ -19,14 +23,18 @@ class SendEmail():
         message['To']=Header('emilee','utf-8')
         #邮件标题
         subject='Python 自动化测试报告'
-        file_path=os.path.join(base_dir+file_name)
         message['Subject']=Header(subject,'utf-8')
         #邮件内容
         message.attach(MIMEText('这是自动化测试脚本邮件。。','plain','utf-8'))
-        att=MIMEText(open(file_path,'rb').read(),'base64','utf-8')
+        if houzhui in ['.jpg','.jpeg','png']:
+            #添加附件图片
+            att=MIMEImage(open(file_path,'rb').read())
+        else:
+            # 添加附件（html\excel等）
+            att = MIMEText(open(file_path, 'rb').read(), 'base64', 'utf-8')
         att["Content-Type"] = 'application/octet-stream'
         # 这里的filename可以任意写，写什么名字，邮件中附件显示什么名字
-        att["Content-Disposition"] = 'attachment; filename="report.html"'
+        att["Content-Disposition"] = 'attachment; filename="report"' + houzhui
         message.attach(att)
         try:
             # 连接smtp服务器，明文/SSL/TLS三种方式，根据你使用的SMTP支持情况选择一种
@@ -56,4 +64,4 @@ class SendEmail():
             print(e)
 
 if __name__=='__main__':
-    SendEmail().send_attach('/testCase/report/report.html')
+    SendEmail().send_attach('/testCase/report/report.jpg')
