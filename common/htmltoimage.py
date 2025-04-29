@@ -3,10 +3,12 @@ from selenium import webdriver
 from time import sleep
 import os,sys,os.path
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+
 base_dir=os.path.dirname(os.path.abspath(__file__))[:-7]
 sys.path.append(base_dir)
-file_path=os.path.join("file://"+base_dir+"/testCase/report/report.html")
-img_path=os.path.join(base_dir+"/testCase/report/report.jpg")
+file_path=os.path.join("file://"+base_dir+"/testCase/report/report2.html")
+img_path=os.path.join(base_dir+"/testCase/report/report.png")
 
 
 def webshot(url):
@@ -17,8 +19,10 @@ def webshot(url):
     options.add_argument('--disable-gpu')
     #关闭chrome浏览器沙盒
     options.add_argument('--no-sandbox')
-    chromedriver = r'/Users/caidan/tool/tool/chromedriver'
-    driver = webdriver.Chrome(chrome_options=options, executable_path=chromedriver)
+    chromedriver = r'/Users/admin/Documents/tools/chrome Driver/chromedriver-mac-x64/chromedriver'
+    service=Service(executable_path=chromedriver)
+    driver = webdriver.Chrome(service= service, options=options)
+    
     #最大化窗口
     driver.maximize_window()
     # 返回网页的高度的js代码,返回元素body的高度
@@ -26,13 +30,14 @@ def webshot(url):
     link = url
     try:
         driver.get(link)
+        sleep(2)
         k = 1
         height = driver.execute_script(js_height)
         while True:
             if k * 500 < height:
                 js_move = "window.scrollTo(0,{})".format(k * 500)
                 driver.execute_script(js_move)
-                sleep(0.2)
+                sleep(1)
                 height = driver.execute_script(js_height)
                 k += 1
             else:
@@ -46,8 +51,9 @@ def webshot(url):
         print("Process {} get one pic !!!".format(os.getpid()))
         sleep(0.1)
     except Exception as e:
-        print(img_path, e)
-
+        print(f"截图失败: {e}")
+    finally:
+        driver.quit()
 #
 #截屏为图片
 # chrome_driver='/Users/caidan/tool/tool/chromedriver'
