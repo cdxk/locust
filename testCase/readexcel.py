@@ -15,17 +15,19 @@ class readexcel():
     titles=[title.value for title in row_data.pop(0)]
     all_row_dict=[]
     for a_row in row_data:
-        #获取行数据
-        row_data=[cell.value for cell in a_row]
+        for cell in a_row:
+            if cell.value and isinstance(cell.value, str):
+                #去掉字符串中的换行符和制表符
+                cell.value = cell.value.replace('\n', '').replace('\t', '').strip()
+            row_data=[cell.value for cell in a_row]
         #将表头和行数据组装成字典
         row_dict=dict(zip(titles,row_data))
+        print(row_dict)
         #将每行数据字段加到列表中
         all_row_dict.append(row_dict)
     # print(all_row_dict)
 
-# class verso():
-#     print(greenlet.__version__)
-#     print(gevent.__version__)
+
 
 if __name__=='__main__':
     readexcel()
