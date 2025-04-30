@@ -25,10 +25,6 @@ class Hellotasks(TaskSet):
         try:
             headers = self.all_row_dicts[0].get('header')
             headers = json.loads(headers)
-            # 检查 headers 是否为字典类型  
-            if not isinstance(headers, dict):
-                raise ValueError("headers 不是字典类型")
-            print(f"请求头类型: {type(headers)}")
         except json.JSONDecodeError as e:
             print(f"解析 header 数据失败: {e}")
             print(f"原始 header 数据: {self.all_row_dicts[0].get('header')}")  
@@ -39,17 +35,20 @@ class Hellotasks(TaskSet):
         code= self.all_row_dicts[0].get('code')
         msg= self.all_row_dicts[0].get('msg')
         
-        try:
-            r = self.client.post(url, timeout=60, headers=headers,json=data)
+        with self.client.post(url, timeout=60, headers=headers,json=json.loads(data),catch_response=True) as response:
             print(f"请求名称: {name}")
-            assert r.status_code == 200
-            assert json.loads(r.text).get('code') == code
-            assert json.loads(r.text).get('msg') == msg
-        except Exception as e:
-            logging.error(f"请求失败: {e}")
-            logging.error(f"请求头: {headers}")
-            logging.error(f"请求数据: {data}")
-       
+            try:
+                assert response.status_code == 200
+            except AssertionError as e:
+                response.failure(f"状态码非200")
+            try:
+                assert json.loads(response.text).get('code') == code
+            except AssertionError as e: 
+                response.failure(f"返回code不一致")
+            try:   
+                assert json.loads(response.text).get('msg') == msg
+            except AssertionError as e:
+                response.failure(f"返回msg不一致")
 
 class HelloWorld(HttpUser):
     wait_time = between(1, 5)
@@ -61,8 +60,9 @@ if __name__=='__main__':
    spawn_rate = 2
    run_time = "10s"
    report_path = "/Users/admin/Documents/projects/locust/locust/testCase/report/report2.html"
-   os.system(f'/Users/admin/Documents/projects/locust/locust/.venv/bin/locust -f {__file__} --headless -H https://mps.lollicupdev.com -u {users} -r {spawn_rate} -t {run_time} --html {report_path}')
-# htmlfile_path = os.path.join("file://" + base_dir + "/testCase/report/report.html")
-    # imgfile_path = os.path.join(base_dir + "/testCase/report/report.jpg")
-    # webshot(htmlfile_path)
+   os.system(f'/Users/admin/Documents/projects/locust/locust/.venv/bin/locust -f {__file__} --headless -H https://mps.lollicupdev.com -u {users} -r {spawn_rate} -t {run_time} --html {report_path} ')
+   htmlfile_path = os.path.join("file://"+base_dir+"/testCase/report/report2.html")
+#    imgfile_path = os.path.join("/Users/admin/Documents/projects/locust/locust/testCase/report/report.jpg")
+   webshot(htmlfile_path)
     # SendEmail().send_attach( )
+    
