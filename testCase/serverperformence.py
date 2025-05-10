@@ -50,9 +50,14 @@ def get_remote_stats(host, user, password,port=22):
     
     # 执行远程命令获取指标
     # stdin, stdout, stderr = ssh.exec_command('python3 -c "import psutil; print(psutil.cpu_percent(), psutil.virtual_memory().percent, psutil.disk_usage(\'/\').percent, psutil.net_io_counters().bytes_sent, psutil.net_io_counters().bytes_recv)"')
-    stdin, stdout, stderr = ssh.exec_command('python3 -c "import psutil; print(psutil.cpu_percent())"')
+    stdin, stdout, stderr = ssh.exec_command('python3 -c "import psutil; print(psutil.cpu_percent(interval=1), flush=True)"')
   
     output=stdout.read().decode().strip()
+    error=stderr.read().decode().strip()
+    if error:
+        #如果被监控服务器没有安装python 和psutil模块，则需要安装
+        print(f"远程命令执行失败: {error}") 
+        return None
     if not output:
         print(f"远程命令未返回任何数据，主机: {host}")
         return None

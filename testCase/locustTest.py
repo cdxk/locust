@@ -64,5 +64,5 @@ if __name__=='__main__':
    htmlfile_path = os.path.join("file://"+base_dir+"/testCase/report/report2.html")
 #    imgfile_path = os.path.join("/Users/admin/Documents/projects/locust/locust/testCase/report/report.jpg")
    webshot(htmlfile_path)
-    # SendEmail().send_attach( )
+   SendEmail().send_attach("/testCase/report/report.png")
     

@@ -43,7 +43,7 @@ class SendEmail():
             smtp.ehlo()
             smtp.login(msg_from, pwd)
             smtp.sendmail(msg_from, to, message.as_string())
-            print('success')
+            print('发送邮件success')
 
 
             # 普通方式，通信过程不加密
@@ -64,4 +64,4 @@ class SendEmail():
             print(e)
 
 if __name__=='__main__':
-    SendEmail().send_attach('/testCase/report/report.jpg')
+    SendEmail().send_attach('/testCase/report/report.png')
