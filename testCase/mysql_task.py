@@ -1,13 +1,40 @@
-from locust import User, tag, task, between
+from locust import User, tag, task, between, events
 import mysql.connector
 import random
 import time,os
+from prometheus_client import start_http_server, Counter, Gauge, Histogram
+
+# # 定义Prometheus指标
+# REQUEST_RPS = Counter('locust_requests_total', 'Total requests per second')
+# RESPONSE_TIME = Histogram('locust_response_time_seconds', 'Response time distribution')
+# FAILED_REQUESTS = Counter('locust_failed_requests_total', 'Total failed requests')
+USERS_COUNT = Gauge('locust_users_current', 'Current number of active users')
+
+# # 启动Prometheus metrics服务器（默认端口8000）
+# start_http_server(8001,addr="127.0.0.1")
+
+# # Locust事件钩子
+# @events.request.add_listener
+# def on_request(request_type, name, response_time, response_length, exception, **kwargs):
+#     REQUEST_RPS.inc()
+#     RESPONSE_TIME.observe(response_time / 1000)  # 转换为秒
+#     if exception:
+#         FAILED_REQUESTS.inc()
+
+@events.test_start.add_listener
+def on_test_start(**kwargs):
+    USERS_COUNT.set(0)  # 重置用户数
+
+@events.test_stop.add_listener
+def on_user_spawn( **kwargs):
+    USERS_COUNT.set(0)
 
 class DatabaseUser(User):
     wait_time = between(1, 3)  # 请求间隔 1~3 秒
 
     def on_start(self):
         """初始化数据库连接"""
+        USERS_COUNT.inc()
         self.db = mysql.connector.connect(
             host="10.0.0.197",
             user="root",
@@ -101,6 +128,7 @@ class DatabaseUser(User):
 
     def on_stop(self):
         """关闭连接"""
+        USERS_COUNT.inc()
         try:
             # 清空所有未处理的结果集
             while self.cursor.nextset():

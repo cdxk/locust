@@ -3,22 +3,21 @@
 from locust import HttpUser,TaskSet,between, task 
 import os,sys,json,logging
 from readexcel import readexcel
-
-#将引入内部文件所在目录加进sys.path中
-base_dir=os.path.dirname(os.path.abspath(__file__))
-sys.path.append(base_dir)
 from common.configEmail import SendEmail
 from common.htmltoimage import webshot
 
-#v1.0以上版本没有httplocust(The HttpLocust class has been renamed to HttpUser in version 1.0)
+
+
+base_dir=os.path.dirname(os.path.abspath(__file__))
+sys.path.append(base_dir)
+Domain="https://mps.lollicupdev.com"
 # 定义用户行为，继承TaskSet类，用于描述用户行为
-# (这个类下面放各种请求，请求是基于requests的，每个方法请求和requests差不多，请求参数、方法、响应对象和requests一样的使用，url这里写的是路径)
 class Hellotasks(TaskSet):
     #每次在开始任务时，先执行on_start方法，只执行一次
     def on_start(self):
         #加载excel文件数据为数组
-        self.all_row_dicts = readexcel().all_row_dict
-    # task装饰该方法为一个事务方法的参数用于指定该行为的执行权重。参数越大，每次被虚拟用户执行概率越高，不设置默认是1，
+        self.all_row_dicts = readexcel().readexcel("interfacesmps.xlsx")
+    
     @task(1)
     def test_list(self):
         headers = {}
@@ -30,12 +29,13 @@ class Hellotasks(TaskSet):
             print(f"原始 header 数据: {self.all_row_dicts[0].get('header')}")  
             headers = {}
         name = self.all_row_dicts[0].get('name')
-        url = self.all_row_dicts[0].get('url')
+        url = Domain+self.all_row_dicts[0].get('url')
         data= self.all_row_dicts[0].get('data')
         code= self.all_row_dicts[0].get('code')
         msg= self.all_row_dicts[0].get('msg')
+        method= self.all_row_dicts[0].get('method')
         
-        with self.client.post(url, timeout=60, headers=headers,json=json.loads(data),catch_response=True) as response:
+        with self.request_method(method,url,headers,data) as response:
             print(f"请求名称: {name}")
             try:
                 assert response.status_code == 200
@@ -49,20 +49,33 @@ class Hellotasks(TaskSet):
                 assert json.loads(response.text).get('msg') == msg
             except AssertionError as e:
                 response.failure(f"返回msg不一致")
+                
+    def request_method(self, method,url, headers=None, data=None):
+        if method == 'get':
+            return self.client.get(url, timeout=60, headers=headers,catch_response=True)
+        elif method == 'post':
+            return self.client.post(url, timeout=60, headers=headers,json=json.loads(data),catch_response=True)
+        else:
+            raise ValueError(f"不支持的请求方法: {method}")
+
+
+            
 
 class HelloWorld(HttpUser):
     wait_time = between(1, 5)
     tasks=[Hellotasks]
+    host = Domain
 
 
 if __name__=='__main__':
    users = 2
    spawn_rate = 2
-   run_time = "10s"
-   report_path = "/Users/admin/Documents/projects/locust/locust/testCase/report/report2.html"
-   os.system(f'/Users/admin/Documents/projects/locust/locust/.venv/bin/locust -f {__file__} --headless -H https://mps.lollicupdev.com -u {users} -r {spawn_rate} -t {run_time} --html {report_path} ')
-   htmlfile_path = os.path.join("file://"+base_dir+"/testCase/report/report2.html")
+   run_time = "5s"
+   report_path = f"{base_dir}/report/Mpsreport.html"
+   img_path = os.path.join(base_dir+"/report/Mpsreport.png")
+   os.system(f'/Users/admin/Documents/projects/locust/locust/.venv/bin/locust -f {__file__} --headless -u {users} -r {spawn_rate} -t {run_time} --html {report_path} ')
+   htmlfile_path = os.path.join("file://"+report_path)
 #    imgfile_path = os.path.join("/Users/admin/Documents/projects/locust/locust/testCase/report/report.jpg")
-   webshot(htmlfile_path)
-   SendEmail().send_attach("/testCase/report/report.png")
+   webshot(htmlfile_path,img_path)
+#    SendEmail().send_attach("/results/report/report.png")
     

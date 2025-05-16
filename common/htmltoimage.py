@@ -7,11 +7,11 @@ from selenium.webdriver.chrome.service import Service
 
 base_dir=os.path.dirname(os.path.abspath(__file__))[:-7]
 sys.path.append(base_dir)
-file_path=os.path.join("file://"+base_dir+"/testCase/report/report2.html")
-img_path=os.path.join(base_dir+"/testCase/report/report.png")
+file_path=os.path.join("file://"+base_dir+"/results/report/report2.html")
+img_path=os.path.join(base_dir+"/report/report3.png")
 
 
-def webshot(url):
+def webshot(url,img_path):
     options = webdriver.ChromeOptions()
     #selenium无头模式（即后台运行，不弹出浏览器框）
     options.add_argument('--headless')

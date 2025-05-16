@@ -1,0 +1,138 @@
+[2025-05-16 17:11:02,769] admindeiMac/INFO/locust.main: Starting Locust 2.36.2 (locust-cloud 1.20.6)
+[2025-05-16 17:11:02,774] admindeiMac/INFO/locust.main: Run time limit set to 15 seconds
+[2025-05-16 17:11:02,776] admindeiMac/INFO/locust.runners: Ramping to 20 users at a rate of 10.00 per second
+[2025-05-16 17:11:02,776] admindeiMac/DEBUG/locust.runners: Ramping to {"HelloWorld": 10} (10 total users)
+[2025-05-16 17:11:02,776] admindeiMac/DEBUG/locust.runners: Spawning additional {"HelloWorld": 10} ({"HelloWorld": 0} already running)...
+[2025-05-16 17:11:02,778] admindeiMac/DEBUG/locust.runners: 10 users spawned
+[2025-05-16 17:11:02,778] admindeiMac/DEBUG/locust.runners: All users of class HelloWorld spawned
+[2025-05-16 17:11:02,778] admindeiMac/DEBUG/locust.runners: 0 users have been stopped, 10 still running
+[2025-05-16 17:11:03,780] admindeiMac/DEBUG/locust.runners: Ramping to {"HelloWorld": 20} (20 total users)
+[2025-05-16 17:11:03,780] admindeiMac/DEBUG/locust.runners: Spawning additional {"HelloWorld": 10} ({"HelloWorld": 10} already running)...
+[2025-05-16 17:11:03,781] admindeiMac/DEBUG/locust.runners: 20 users spawned
+[2025-05-16 17:11:03,781] admindeiMac/DEBUG/locust.runners: All users of class HelloWorld spawned
+[2025-05-16 17:11:03,781] admindeiMac/DEBUG/locust.runners: 0 users have been stopped, 20 still running
+[2025-05-16 17:11:03,782] admindeiMac/INFO/locust.runners: All users spawned: {"HelloWorld": 20} (20 total users)
+[2025-05-16 17:11:03,820] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:03,868] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:03,971] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,037] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,083] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,142] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,171] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,220] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,259] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,286] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,316] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,336] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,357] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,377] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,399] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,419] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,442] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,464] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,485] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:04,502] admindeiMac/DEBUG/urllib3.connectionpool: Starting new HTTP connection (1): 54.187.32.55:80
+[2025-05-16 17:11:05,197] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,215] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,216] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,253] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,254] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,255] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,260] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,271] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,288] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,289] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,290] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,291] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,305] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,330] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,331] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,333] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,355] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,356] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,358] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:05,359] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:06,892] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:06,971] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:07,278] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:07,500] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:07,609] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:07,723] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:08,057] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:08,357] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:08,682] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:09,053] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:09,549] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:09,651] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:09,796] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:10,313] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:10,327] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:10,337] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:10,350] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:10,374] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:10,381] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:10,403] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:10,437] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:10,444] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:11,357] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:11,495] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:11,622] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:11,661] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:11,795] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:11,888] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:11,976] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:12,403] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:12,481] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:12,744] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:12,890] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:12,932] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:13,387] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:13,749] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:13,779] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:14,009] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:14,134] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:14,215] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:14,352] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:14,472] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:14,857] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:14,934] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:15,014] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:15,014] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:15,221] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:15,288] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:15,527] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:15,612] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:15,941] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:16,149] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:16,429] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:16,767] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:16,942] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:16,980] admindeiMac/INFO/locust.main: --run-time limit reached, shutting down
+[2025-05-16 17:11:17,143] admindeiMac/DEBUG/locust.runners: Stopping all users (called from /Users/admin/Documents/projects/locust/locust/.venv/lib/python3.13/site-packages/locust/runners.py:551)
+[2025-05-16 17:11:17,143] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-0
+[2025-05-16 17:11:17,143] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-1
+[2025-05-16 17:11:17,143] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-2
+[2025-05-16 17:11:17,143] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-3
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-4
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-5
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-6
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-7
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-8
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-9
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-10
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-11
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-12
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-13
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-14
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-15
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-16
+[2025-05-16 17:11:17,144] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-17
+[2025-05-16 17:11:17,145] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-18
+[2025-05-16 17:11:17,145] admindeiMac/DEBUG/locust.runners: Stopping Greenlet-19
+[2025-05-16 17:11:17,147] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:17,148] admindeiMac/DEBUG/urllib3.connectionpool: http://54.187.32.55:80 "GET /api/v1/user/posts?page=1&type=-1&isActiveTab=true&&limit=10 HTTP/1.1" 200 30662
+[2025-05-16 17:11:17,151] admindeiMac/DEBUG/locust.runners: 20 users have been stopped, 0 still running
+[2025-05-16 17:11:17,263] admindeiMac/INFO/locust.main: writing html report to file: /Users/admin/Documents/projects/locust/locust/testCase/report/awdtsg_report2025-05-16-17:11:01.html
+[2025-05-16 17:11:17,266] admindeiMac/DEBUG/locust.main: Running teardowns...
+[2025-05-16 17:11:17,266] admindeiMac/INFO/locust.main: Shutting down (exit code 0)
+[2025-05-16 17:11:17,266] admindeiMac/DEBUG/locust.main: Cleaning up runner...
